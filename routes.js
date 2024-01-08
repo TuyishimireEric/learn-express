@@ -18,11 +18,6 @@ router.post("/posts", async (req, res) => {
 });
 
 router.get("/posts/:id", async (req, res) => {
-  const post = await Post.findOne({ _id: req.params.id });
-  res.send(post);
-});
-
-router.get("/posts/:id", async (req, res) => {
   try {
     const post = await Post.findOne({ _id: req.params.id });
     res.send(post);
